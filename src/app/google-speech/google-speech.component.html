@@ -1,0 +1,27 @@
+<h2>Google Speech</h2>
+
+<p class="description">
+  This is a demo for using the Google Speech-to-Text API
+</p>
+
+<div class="audio-panel">
+
+  <p class="directions">Click to the microphone icon to record. The stream will
+    automatically timeout and stop after
+    {{timeoutMilliseconds/1000}} seconds. The audio controls can then be used
+    to play/replay the captured stream.
+  </p>
+
+  <button mat-icon-button *ngIf="!recording" (click)="record()">
+    <mat-icon>mic</mat-icon>
+  </button>
+  <button mat-icon-button *ngIf="recording" (click)="stop()">
+    <mat-icon>mic_off</mat-icon>
+  </button>
+  <div class="pulse" *ngIf="recording"></div>
+
+  <mat-spinner *ngIf="waiting"></mat-spinner>
+
+
+</div>
+<div class="output" *ngIf="recognizedSpeech">{{recognizedSpeech.transcript}}</div>
