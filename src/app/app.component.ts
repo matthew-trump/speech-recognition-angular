@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'speech-recognition-angular';
+  title = 'Angular Speech Recognition Demo';
+  routes: any[] = [
+    {
+      route: [''],
+      label: "Home"
+    },
+    {
+      route: ['google-speech'],
+      label: "Google Speech"
+    }
+  ]
 }
